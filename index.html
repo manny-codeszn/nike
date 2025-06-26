@@ -11,14 +11,14 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="style.css" />
-    <title>Sneakers Store</title>
+    <title>Nike Shoe Showcase</title>
   </head>
   <body>
     <div class="bg">
       <nav>
         <div class="navTop">
           <div class="navItem">
-            <img src="./img/logo.png" width="80px" height="33px" alt="" />
+            <img src="./img/logo.png" width="80px" height="33px" alt="Nike Logo" />
           </div>
           <div class="navItem">
             <div class="search">
@@ -27,53 +27,60 @@
             </div>
           </div>
           <div class="navItem">
-            <span class="limitedOffer"> Just Do It! </span>
+            <div class="cartContainer">
+              <i class="fa-solid fa-shopping-cart cartIcon"></i>
+              <span class="cartCount" id="cartCount">0</span>
+              <div class="cartNotification" id="cartNotification">Added to cart!</div>
+            </div>
+          </div>
+          <div class="navItem">
+            <span class="limitedOffer">Just Do It!</span>
           </div>
         </div>
         <div class="navBottom">
-          <h3 class="menuItem">Tatum 2</h3>
-          <h3 class="menuItem">LeBron XXI</h3>
-          <h3 class="menuItem">G.T. Jump 2</h3>
-          <h3 class="menuItem">Jordan 1</h3>
-          <h3 class="menuItem">Lebron Soldier 14</h3>
+          <h3 class="menuItem active" data-index="0">Tatum 2</h3>
+          <h3 class="menuItem" data-index="1">LeBron XXI</h3>
+          <h3 class="menuItem" data-index="2">G.T. Jump 2</h3>
+          <h3 class="menuItem" data-index="3">Jordan 1</h3>
+          <h3 class="menuItem" data-index="4">Lebron Soldier 14</h3>
         </div>
       </nav>
       <div class="slider">
         <div class="sliderWrapper">
           <div class="sliderItem">
-            <img src="./img/tatum2.png" alt="" class="sliderImage" />
+            <img src="./img/tatum2.png" alt="Tatum 2" class="sliderImage" />
             <div class="sliderBg"></div>
             <h1 class="sliderTitle">Tatum<br />2</h1>
             <h2 class="sliderPrice">£120</h2>
-            <button class="buyButton">PURCHASE</button>
+            <button class="buyButton" data-product="Tatum 2" data-price="£120">PURCHASE</button>
           </div>
           <div class="sliderItem">
-            <img src="./img/lebron_20_debut.png" alt="" class="sliderImage" />
+            <img src="./img/lebron_20_debut.png" alt="LeBron XXI" class="sliderImage" />
             <div class="sliderBg"></div>
             <h1 class="sliderTitle">LeBron<br />XXI</h1>
             <h2 class="sliderPrice">£135</h2>
-            <button class="buyButton">PURCHASE</button>
+            <button class="buyButton" data-product="LeBron XXI" data-price="£135">PURCHASE</button>
           </div>
           <div class="sliderItem">
-            <img src="./img/gt_jump2a.png" alt="" class="sliderImage" />
+            <img src="./img/gt_jump2a.png" alt="G.T. Jump 2" class="sliderImage" />
             <div class="sliderBg"></div>
             <h1 class="sliderTitle">G.T.<br />Jump 2</h1>
             <h2 class="sliderPrice">£150</h2>
-            <button class="buyButton">PURCHASE</button>
+            <button class="buyButton" data-product="G.T. Jump 2" data-price="£150">PURCHASE</button>
           </div>
           <div class="sliderItem">
-            <img src="./img/j1_take5b.png" alt="" class="sliderImage" />
+            <img src="./img/j1_take5b.png" alt="Jordan 1" class="sliderImage" />
             <div class="sliderBg"></div>
             <h1 class="sliderTitle">Jordan<br />1</h1>
             <h2 class="sliderPrice">£133</h2>
-            <button class="buyButton">PURCHASE</button>
+            <button class="buyButton" data-product="Jordan 1" data-price="£133">PURCHASE</button>
           </div>
           <div class="sliderItem">
-            <img src="./img/lebron_s14.png" alt="" class="sliderImage" />
+            <img src="./img/lebron_s14.png" alt="Lebron Soldier 14" class="sliderImage" />
             <div class="sliderBg"></div>
-            <h1 class="sliderTitle">LB SOldier<br />14</h1>
+            <h1 class="sliderTitle">LB Soldier<br />14</h1>
             <h2 class="sliderPrice">£145</h2>
-            <button class="buyButton">PURCHASE</button>
+            <button class="buyButton" data-product="Lebron Soldier 14" data-price="£145">PURCHASE</button>
           </div>
         </div>
       </div>
@@ -93,20 +100,17 @@
       <div class="feature">
         <i class="fa-solid fa-circle-dollar-to-slot fa-2xl featureIcon"></i>
         <span class="featureTitle">GIFT CARDS</span>
-        <span class="featuredDes"
-          >Buy Gift Cards and use your coupon codes</span
-        >
+        <span class="featuredDes">Buy Gift Cards and use your coupon codes</span>
       </div>
       <div class="feature">
         <i class="fa-solid fa-address-card fa-2xl featureIcon"></i>
         <span class="featureTitle">CONTACT US</span>
-        <span class="featuredDes"
-          >Keep in touch and reach out to our customer service</span
-        >
+        <span class="featuredDes">Keep in touch and reach out to our customer service</span>
       </div>
     </div>
+    
     <div class="product">
-      <img src="./img/sneakers/air force.png" alt="" class="productImg" />
+      <img src="./img/sneakers/air force.png" alt="Air Force Sneakers" class="productImg" />
       <div class="productDetails">
         <h1 class="productTitle">Air Force</h1>
         <h2 class="productPrice">£120</h2>
@@ -116,17 +120,21 @@
           qui.
         </p>
         <div class="colors">
-          <div class="color"></div>
-          <div class="color"></div>
+          <div class="color selected" data-color="black"></div>
+          <div class="color" data-color="gray"></div>
         </div>
         <div class="sizes">
-          <div class="size">39</div>
-          <div class="size">40</div>
-          <div class="size">44</div>
+          <div class="size" data-size="39">39</div>
+          <div class="size" data-size="40">40</div>
+          <div class="size" data-size="41">41</div>
+          <div class="size" data-size="42">42</div>
+          <div class="size" data-size="43">43</div>
+          <div class="size" data-size="44">44</div>
         </div>
-        <button class="productBtn">ORDER HERE</button>
+        <button class="productBtn" id="productBtn" disabled>ORDER HERE</button>
       </div>
     </div>
+    
     <footer>
       <ul class="nav-links">
         <li>
@@ -164,6 +172,7 @@
       </ul>
       <p>&copy; Copyright Manny_Johnson -X- Nike_Store</p>
     </footer>
+    
     <script src="script.js"></script>
   </body>
 </html>
